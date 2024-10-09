@@ -18,7 +18,10 @@ public class DeveloperTest {
         constructor.setAccessible(true);
         constructor.newInstance();
     }
-
+    @Test
+    public void getGithubID_returns_correct_id(){
+        assertEquals("berdly", Developer.getGithubId());
+    }
     @Test
     public void getName_returns_correct_name() {
         // TODO: Replace Chris G. with your name as shown on
