@@ -71,6 +71,13 @@ public class TeamTest {
     public void hashCode_same_values(){
         assertEquals(team.hashCode(), new Team("test-team").hashCode());
     }
+
+    @Test
+    public void hashCode_same_name_different_teams(){
+        Team other_team = new Team("test-team");
+        other_team.addMember("Throckmorton");
+        assertNotEquals(team, other_team);
+    }
     @Test
     public void hashCode_equal_operations(){
         assertEquals(team.getName().hashCode() | team.getMembers().hashCode(), team.hashCode());
